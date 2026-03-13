@@ -1,223 +1,99 @@
-ABYSSBAY REPORT SYSTEM - Java Plugin
-=====================================
+# 🛡️ AbyssBay Report System
 
-EIN PROFESSIONELLES REPORT-SYSTEM FÜR MINECRAFT JAVA & BEDROCK EDITION
-
-FEATURES:
-=========
-
-✓ JAVA & BEDROCK EDITION SUPPORT
-  - Automatische Java/Bedrock-Erkennung
-  - UUID-Tracking für Java-Spieler
-  - XUID-Tracking für Bedrock-Spieler (via FloodgateAPI)
-  - Spieler-Datenbank für Bedrock
-
-✓ DISCORD WEBHOOK INTEGRATION
-  - Live-Reports mit Embed-Nachrichten
-  - Admin-Role Mentions
-  - Report-Status Updates
-  - Discord Channel Notifications
-
-✓ REPORT MANAGEMENT
-  - Automatische Report-IDs
-  - Cooldown-System
-  - Report-Statistiken
-  - Status Tracking (OPEN/CLOSED)
-  - SQLite Datenbank
-
-✓ ADMIN-BEFEHLE
-  /report <Spieler> <Grund>    - Report erstellen
-  /reportstats [Spieler]        - Statistiken
-  /reportinfo <Report-ID>       - Details anzeigen
-  /reportclose <Report-ID>      - Report schließen
-  /reportdash                   - Dashboard
-
-INSTALLATION:
-=============
-
-1. Voraussetzungen:
-   - Java 16+
-   - Bukkit/Spigel Server 1.20+
-   - FloodgateAPI (optional, für Bedrock-Support)
-
-2. Build:
-   mvn clean package
-
-3. JAR kopieren:
-   Kopiere die .jar aus target/ zu plugins/
-
-4. Konfiguration:
-   Bearbeite config.yml und trage Discord Webhook ein:
-   - discord-webhook: <DEINE_WEBHOOK_URL>
-   - admin-role-id: <DEINE_ROLE_ID>
-
-5. Server neustarten
-
-KONFIGURATION:
-==============
-
-config.yml:
-- Discord Webhook URL
-- Admin Role ID
-- Server-Name
-- Report-Gründe
-- Cooldown (Sekunden)
-- Bedrock-Support aktivieren/deaktivieren
-
-plugin.yml:
-- Berechtigungen
-- Befehl-Aliase
-
-DATABASE:
-=========
-
-SQLite-Datenbank mit 3 Tabellen:
-- reports: Report-Daten
-- bedrock_players: Bedrock-Spieler (XUID)
-- report_stats: Report-Statistiken
-
-BEFEHLE:
-========
-
-SPIELER:
-  /report PlayerName Hacking
-  /melden PlayerName XRay
-  (Alternativ: /report PlayerName zum interaktiven Menü)
-
-ADMIN:
-  /reportstats                   - Alle Reports
-  /reportstats PlayerName        - Stats für Spieler
-  /reportinfo REP-123-456        - Report-Details
-  /reportclose REP-123-456       - Report schließen
-  /reportdash                    - Dashboard mit offenen Reports
-
-BERECHTIGUNGEN:
-===============
-
-report.use      - Spieler können Reports erstellen (default: true)
-report.admin    - Admin kann Reports verwalten (default: op)
-
-STRUKTUR:
-=========
-
-src/main/java/com/minetales/report/
-├── MinetalesReportPlugin.java          (Main Plugin Class)
-├── commands/
-│   ├── ReportCommand.java              (/report)
-│   ├── ReportStatsCommand.java         (/reportstats)
-│   ├── ReportInfoCommand.java          (/reportinfo)
-│   ├── ReportCloseCommand.java         (/reportclose)
-│   └── ReportDashCommand.java          (/reportdash)
-├── managers/
-│   ├── ReportManager.java              (Report-Verwaltung)
-│   ├── DatabaseManager.java            (SQLite)
-│   ├── DiscordManager.java             (Discord Webhooks)
-├── models/
-│   └── Report.java                     (Report-Datenmodell)
-├── listeners/
-│   ├── PlayerJoinListener.java         (Bedrock-Tracking)
-│   └── PlayerQuitListener.java         (Cleanup)
-└── utils/
-    ├── ConfigManager.java              (Config-Verwaltung)
-    └── PlayerUtils.java                (Player-Utilities)
-
-BEDROCK SUPPORT:
-================
-
-- Bedrock-Spieler werden mit "." Präfix erkannt
-- XUID wird beim Join automatisch gespeichert
-- FloodgateAPI Integration für Live-Daten
-- "Zuletzt gesehen" für Offline-Spieler
-
-DISCORD INTEGRATION:
-====================
-
-Format der Webhook-Nachricht:
-- Report ID
-- Server-Name
-- Reporter-Name
-- Gemeldeter Spieler
-- Spieler-Typ (Java/Bedrock)
-- Online/Offline Status
-- Grund
-- Report-Statistiken
-- Thumbnail mit Spieler-Skin
-
-Admin-Role wird automatisch gepingt
-
-DEPENDENCIES:
-==============
-
-- Bukkit API 1.20
-- FloodgateAPI 2.2.2
-- GSON (JSON-Parsing)
-- SQLite JDBC
-
-BUILD:
-======
-
-mvn clean package
-→ output/target/report-system-1.0.0.jar
-
-TROUBLESHOOTING:
-================
-
-[ERROR] FloodgateAPI nicht gefunden?
-→ FloodgateAPI Plugin nicht installiert
-→ Installiere: floodgate-bukkit.jar
-
-[ERROR] Webhook funktioniert nicht?
-→ Webhook-URL überprüfen
-→ Discord-Kanal-Berechtigungen
-→ Server-Firewall prüfen
-
-[ERROR] Build fehlgeschlagen?
-→ Java 16+ erforderlich
-→ Maven aktualisieren
-→ Dependencies downloaden: mvn clean install
-
-SUPPORT & COMMUNITY:
-====================
-
-Bukkit: https://bukkit.gamepedia.com
-Spigel: https://www.spigotmc.org
-GitHub: https://github.com/
-
-DEBUG MODE:
-===========
-
-Server-Log prüfen für Fehler:
-- Datenbank-Fehler
-- Discord-Fehler
-- FloodgateAPI-Fehler
-- Command-Fehler
-
-ZUKÜNFTIGE FEATURES:
-====================
-
-- Web-Dashboard
-- Report-Archiv (Auto-Delete)
-- Reward-System
-- Multi-Webhook Support
-- Report-Export (CSV/JSON)
-- Auto-Ban nach X Reports
-- Custom Report-Gründe (in-game)
-
-VERSION:
-========
-
-Plugin Version: 1.0.0
-Kompatibilität: Bukkit/Spigel 1.20+
-Java: 16+
-Status: Produktionsreif
-
-LIZENZ:
-=======
-
-Open Source - Frei nutzbar für deine Server
+> **Das ultimative Java Plugin für professionelles Server-Management.** > Eine nahtlose Brücke zwischen **Minecraft Java & Bedrock Edition** mit direkter Discord-Anbindung.
 
 ---
 
-Viel Erfolg mit deinem Report-System! 🚀
+## 🚀 Highlights
 
-Entwickelt von AbyssBay Team
+* **Dual-Engine Support:** Volle Integration von Java-UUIDs und Bedrock-XUIDs (via Floodgate).
+* **Discord Live-Feed:** Echtzeit-Benachrichtigungen mit Rich Embeds und Admin-Ping.
+* **Smart Tracking:** Automatisches Datenbank-Logging für Offline-Spieler und Statistiken.
+* **Performance:** Leichtgewichtige SQLite-Anbindung und optimiertes Cooldown-System.
+
+---
+
+## 🛠️ Features im Detail
+
+### 🌐 Cross-Platform Erkennung
+
+* **Bridges:** Erkennt automatisch, ob ein Spieler über Java oder Bedrock beitritt.
+* **Floodgate API:** Nutzt XUID-Tracking für lückenlose Identifikation.
+* **Status-Check:** Zeigt den Online-Status und "Zuletzt gesehen"-Daten an.
+
+### 📊 Management & Admin-Tools
+
+* **Interaktive Menüs:** `/report <Name>` öffnet ein GUI/Menü für intuitive Nutzung.
+* **ID-System:** Jeder Fall erhält eine eindeutige Ticket-ID (z.B. `REP-123`).
+* **Admin Dashboard:** `/reportdash` für den schnellen Überblick offener Fälle.
+* **Data-Mining:** Umfassende `/reportstats` zur Analyse von Wiederholungstätern.
+
+### 💬 Discord Integration
+
+* **Rich Embeds:** Inklusive Spieler-Skins (Thumbnails) und detaillierter Infos.
+* **Status-Sync:** Updates im Discord, wenn ein Report geschlossen wird.
+* **Role-Mentions:** Sofortige Benachrichtigung für dein Mod-Team.
+
+---
+
+## 📋 Befehlsreferenz
+
+| Befehl | Beschreibung | Berechtigung |
+| --- | --- | --- |
+| `/report <Spieler> [Grund]` | Erstellt einen neuen Report | `report.use` |
+| `/reportdash` | Öffnet das Admin-Dashboard | `report.admin` |
+| `/reportinfo <ID>` | Zeigt alle Details zu einem Report | `report.admin` |
+| `/reportclose <ID>` | Schließt und archiviert einen Fall | `report.admin` |
+| `/reportstats [Spieler]` | Ruft globale oder spielerspezifische Stats ab | `report.admin` |
+
+---
+
+## 🔧 Installation & Setup
+
+1. **Voraussetzungen:** Java 16+, Bukkit/Spigot/Paper 1.20+ (Floodgate optional).
+2. **Build:** Führe `mvn clean package` aus.
+3. **Deployment:** Schiebe die `.jar` aus dem `target/` Ordner in deinen `/plugins/` Ordner.
+4. **Config:** Hinterlege deine Webhook-URL in der `config.yml`:
+```yaml
+discord:
+  webhook-url: "DEINE_URL_HIER"
+  admin-role-id: "123456789"
+settings:
+  cooldown: 60
+  bedrock-support: true
+
+```
+
+
+5. **Start:** Server neu starten – fertig!
+
+---
+
+## 📂 Projektstruktur
+
+Das System ist nach dem **Model-View-Controller (MVC)** Prinzip aufgebaut:
+
+* `commands/` – Saubere Trennung der Logik für Spieler- und Admin-Befehle.
+* `managers/` – Zentrale Verwaltung für Datenbank, Discord und Reports.
+* `listeners/` – Event-Handling für automatisiertes Tracking.
+* `models/` – Abstraktion der Report-Objekte für einfache Erweiterbarkeit.
+
+---
+
+## 🛠 Troubleshooting
+
+* **Keine Discord-Nachricht?** Prüfe die Webhook-URL und die Server-Firewall (Port 443).
+* **Bedrock-Spieler fehlen?** Stelle sicher, dass Floodgate korrekt installiert ist.
+* **Datenbank-Fehler?** Prüfe, ob Schreibrechte im Plugin-Ordner für die `.db` Datei bestehen.
+
+---
+
+## 🌟 Roadmap
+
+* [ ] **Web-Interface:** Ein externes Dashboard für Browser-Zugriff.
+* [ ] **Auto-Mod:** Automatische Sanktionen bei Erreichen eines Report-Schwellenwerts.
+* [ ] **Reward-System:** Belohnungen für Spieler, deren Reports zur Überführung führten.
+
+---
+
+**Version:** `1.0.0-RELEASE` | **Entwickelt von:** `AbyssBay Team` 🚀
