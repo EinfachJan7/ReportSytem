@@ -1,0 +1,52 @@
+name: AbyssBayReportSystem
+version: 1.0.0
+api-version: 1.13
+main: com.minetales.report.MinetalesReportPlugin
+description: Professional Report System for AbyssBay
+authors:
+  - AbyssBay Team
+softdepend:
+  - Floodgate
+  - LuckPerms
+
+commands:
+  report:
+    description: Melde einen Spieler
+    usage: /report <Spieler> <Grund>
+    aliases:
+      - melden
+    permission: report.use
+  
+  reports:
+    description: Verwalte Reports (check, info, close, view)
+    usage: /reports <check|info|close|view>
+    aliases:
+      - reportlist
+    permission: report.staff
+  
+  reportreload:
+    description: Lade messages.yml neu
+    usage: /reportreload
+    permission: report.admin
+    aliases:
+      - rreload
+  
+  reportmessage:
+    description: Bearbeite Messages
+    usage: /reportmessage <set|get|reload> [key] [value]
+    permission: report.admin
+    aliases:
+      - rmessage
+
+permissions:
+  report.use:
+    description: Erlaubt Report-Befehl zu nutzen
+    default: true
+    
+  report.admin:
+    description: Alle Report-Befehle (Reports verwalten, Messages bearbeiten, Reload)
+    default: op
+  
+  report.staff:
+    description: Report-Befehle (check, info, close, view) - KEINE Messages oder Reload
+    default: false

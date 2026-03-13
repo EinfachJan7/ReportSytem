@@ -1,0 +1,92 @@
+# AbyssBay Report System - GUI Konfiguration
+# Struktur: Invertierte Pyramide (Oben breit, unten zentriert)
+# Farben: Individuelle Pastell-Töne pro Grund
+
+report-reasons:
+  title: "<#808080>| <gradient:#4A9FD8:#FFFFE0>Report:</gradient> <#f8fafc>{player} <#808080>|"
+  
+  rows: 3
+  
+  background-item: "LIGHT_BLUE_STAINED_GLASS_PANE"
+  background-name: "<#808080> "
+
+  reasons:
+    # --- Reihe 1 (Oben: 7 Items zentriert) ---
+    Hacking:
+      slot: 1
+      material: "DIAMOND_SWORD"
+      name: "<#93c5fd>Hacking"
+      lore:
+        - "<#cbd5e1>Nutzen von Drittanbietersoftware"
+    
+    Griefing:
+      slot: 2
+      material: "TNT"
+      name: "<#fca5a5>Griefing"
+      lore:
+        - "<#cbd5e1>Zerstoerung fremder Bauten"
+    
+    Beleidigung:
+      slot: 3
+      material: "REDSTONE_BLOCK"
+      name: "<#f87171>Beleidigung"
+      lore:
+        - "<#cbd5e1>Unangemessene Ausdrucksweise"
+    
+    Spam:
+      slot: 4
+      material: "OAK_LOG"
+      name: "<#fbbf24>Spam"
+      lore:
+        - "<#cbd5e1>Chatueberflutung durch Nachrichten"
+    
+    Werbung:
+      slot: 5
+      material: "OAK_SIGN"
+      name: "<#e879f9>Werbung"
+      lore:
+        - "<#cbd5e1>Unerlaubte Server-Links"
+    
+    Provokation:
+      slot: 6
+      material: "FIRE_CHARGE"
+      name: "<#fdba74>Provokation"
+      lore:
+        - "<#cbd5e1>Unnoetiges Aufstacheln im Chat"
+    
+    Bugusing:
+      slot: 7
+      material: "BARRIER"
+      name: "<#fb7185>Bugusing"
+      lore:
+        - "<#cbd5e1>Ausnutzung von Spielfehlern"
+
+    # --- Reihe 2 (Mitte: 2 Items zentriert) ---
+    Bannumgehung:
+      slot: 12
+      material: "OBSIDIAN"
+      name: "<#c084fc>Bannumgehung"
+      lore:
+        - "<#cbd5e1>Versuch Sperren zu umgehen"
+    
+    Bedrohung:
+      slot: 14
+      material: "REDSTONE_TORCH"
+      name: "<#fda4af>Bedrohung"
+      lore:
+        - "<#cbd5e1>Einschuechterung oder Belaestigung"
+    
+    Unangebrachter Skin/Name:
+      slot: 13
+      material: "NETHERITE_HELMET"
+      name: "<#c7d2e0>Unangebrachter Skin/Name"
+      lore:
+        - "<#cbd5e1>Offensiver Skin oder Spielername"
+
+    # --- Reihe 3 (Unten: 1 Item zentriert als Basis) ---
+    Sonstiges:
+      slot: 22
+      material: "NETHER_STAR"
+      name: "<#bbf7d0>Sonstiges"
+      lore:
+        - "<#cbd5e1>Andere oder unbekannte Gruende"

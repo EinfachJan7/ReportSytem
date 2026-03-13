@@ -1,0 +1,81 @@
+# AbyssBay Report System - Konfiguration
+
+# Datenbank-Einstellungen
+database:
+  enabled: true
+  type: "mysql"  # mysql oder file
+  host: "138.201.17.99"
+  port: 3306
+  name: "Datenbank"
+  user: "Zockerlord15"
+  password: "Minecraft1234"
+  # Connection Pool Einstellungen
+  max-pool-size: 10
+  min-idle: 5
+  connection-timeout: 30000
+  idle-timeout: 600000
+  auto-save-interval: 300  # Sekunden
+
+# Discord Webhook
+discord:
+  webhook-url: "https://discord.com/api/webhooks/1481988110236782592/YkR36kNnM299RiVv2xvfUFO-ap3wR337TGWh6U1Cer1qQw5WoVaTuJB707OS4JkfJ3-Z"
+  admin-role-id: "1482018689053229219"
+  
+  # Embed Customization
+  embed:
+    color: 3092790
+    title: "🚨 SPIELER REPORT 🚨"
+    description: "Ein Spieler wurde vom Report-System gemeldet"
+    author-name: "AbyssBay Report System"
+    author-icon-url: "https://minotar.net/avatar/{reporter}/32"  # {reporter} wird durch Reporter-Namen ersetzt
+    thumbnail-url: "https://minotar.net/avatar/{player}/64"  # {player} wird durch Spielernamen ersetzt
+    avatar-url: "https://minotar.net/avatar/{player}/128"  # Avatar des Reported Spielers
+    footer: "AbyssBay Report System"
+    footer-icon-url: "https://minotar.net/avatar/MHF_Question/32"
+    show-timestamp: true
+    fields:
+      - name: "Reporter"
+        value: "{reporter}"
+        inline: true
+      - name: "Grund"
+        value: "{reason}"
+        inline: true
+      - name: "Server"
+        value: "{server}"
+        inline: true
+
+# Server Information
+server:
+  name: "Farmwelt"
+  bedrock-tracking: true
+
+# Report Settings
+report:
+  cooldown-seconds: 60
+  max-reports-per-player: 10
+  auto-delete-after-hours: 7
+  auto-close-after-days: 7
+  
+  reasons:
+    - "Hacking"
+    - "Griefing"
+    - "Beleidigung"
+    - "Spam"
+    - "Werbung"
+    - "Provokation"
+    - "Bugusing"
+    - "Bannumgehung"
+    - "Bedrohung"
+    - "Unangebrachter Skin/Name"
+    - "Sonstiges"
+
+# Permissions
+permissions:
+  report-use: "report.use"
+  report-admin: "report.admin"
+  report-staff: "report.staff"
+
+# Bedrock
+bedrock:
+  detect-by-prefix: true
+  prefix: "."

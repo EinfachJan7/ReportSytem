@@ -1,0 +1,142 @@
+﻿# AbyssBay Report System - Nachrichten
+# Nutze den {PREFIX} Placeholder um den Prefix aus der system-config zu verwenden
+# Alle anderen Platzhalter: {player}, {reporter}, {reason}, {id}, {seconds}, {error}
+
+prefix: "<#808080>[</#808080><gradient:#4A9FD8:#FFFFE0>Abyssbay</gradient><#808080>]</#808080>"
+
+report:
+  usage: "{PREFIX} <#fef08a>Verwendung:</#fef08a> <#f8fafc>/report <Spieler> <Grund></#f8fafc>"
+  
+  reasons:
+    header: "{PREFIX} <#fef08a>Verfuegbare Gruende:</#fef08a>"
+    list_item: "<#cbd5e1>  - {reason}</#cbd5e1>"
+  
+  no_permission: "{PREFIX} <#fca5a5>Du darfst keine Reports erstellen!</#fca5a5>"
+  
+  invalid_reason: "{PREFIX} <#fca5a5>Dieser Grund ist nicht gueltig!</#fca5a5>"
+  
+  cooldown: "{PREFIX} <#fca5a5>Du musst noch {seconds}s warten!</#fca5a5>"
+  
+  not_found: "{PREFIX} <#fca5a5>Dieser Spieler wurde nicht gefunden!</#fca5a5>"
+  never_played: "{PREFIX} <#fde68a>Spieler hat noch nie gespielt, aber Report wird trotzdem erstellt!</#fde68a>"
+  
+  self_report: "{PREFIX} <#fca5a5>Du kannst dich nicht selbst melden!</#fca5a5>"
+  
+  enter_reason: "{PREFIX} <#fef08a>Schreibe in den Chat, was genau war/ist das Problem?</#fef08a>"
+  
+  success: "{PREFIX} <#bbf7d0>Report erfolgreich erstellt!</#bbf7d0>"
+  report_id: "{PREFIX} <#fef08a>Report ID:</#fef08a> <#f8fafc>{id}</#f8fafc>"
+  player: "{PREFIX} <#fef08a>Spieler:</#fef08a> <#f8fafc>{player}</#f8fafc>"
+  reason: "{PREFIX} <#fef08a>Grund:</#fef08a> <#f8fafc>{reason}</#f8fafc>"
+  report_closed: "{PREFIX} <#fef08a>Dein Report wurde geschlossen!</#fef08a> <#cbd5e1>Spieler:</#cbd5e1> <#f8fafc>{player}</#f8fafc> <#cbd5e1>Geschlossen von:</#cbd5e1> <#f8fafc>{closed_by}</#f8fafc>"
+
+reload:
+  success: "{PREFIX} <#bbf7d0>Config und Messages neu geladen!</#bbf7d0>"
+  error: "{PREFIX} <#fca5a5>Fehler beim Laden!</#fca5a5>"
+  no_permission: "{PREFIX} <#fca5a5>Du hast keine Berechtigung!</#fca5a5>"
+
+reports:
+  check:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reports check [Seite]</#f8fafc>"
+    list_header: "{PREFIX} <#fef08a>Offene Reports:</#fef08a>"
+    item_count: "{PREFIX} <#fef08a>Insgesamt:</#fef08a> <#f8fafc>{count}</#f8fafc> offene Reports"
+    pagination: "{PREFIX} <#cbd5e1>Seite {page}/{maxpage}</#cbd5e1>"
+    no_reports: "{PREFIX} <#bbf7d0>Keine offenen Reports!</#bbf7d0>"
+    item: "  <#f8fafc>[{id}]</#f8fafc> <#cbd5e1>|</#cbd5e1> <#fef08a>{reporter}</#fef08a> <#cbd5e1>-</#cbd5e1> <#fca5a5>{reported}</#fca5a5> <#cbd5e1>:</#cbd5e1> <#fdba74>{reason}</#fdba74> <#cbd5e1>| {date}</#cbd5e1>"
+  
+  close:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/report close <ID> [Grund]</#f8fafc>"
+    not_found: "{PREFIX} <#fca5a5>Report {id} nicht gefunden!</#fca5a5>"
+    already_closed: "{PREFIX} <#fca5a5>Report {id} ist bereits geschlossen!</#fca5a5>"
+    success: "{PREFIX} <#bbf7d0>Report {id} geschlossen!</#bbf7d0> <#cbd5e1>({reason})</#cbd5e1>"
+    error: "{PREFIX} <#fca5a5>Fehler beim Schliessen: {error}</#fca5a5>"
+  
+  info:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reports info <ID></#f8fafc>"
+    header: "{PREFIX} <#fef08a>Report Informationen:</#fef08a>"
+    id: "  <#fef08a>ID:</#fef08a> <#f8fafc>{id}</#f8fafc>"
+    reporter: "  <#fef08a>Reporter:</#fef08a> <#f8fafc>{reporter}</#f8fafc>"
+    reported: "  <#fef08a>Spieler:</#fef08a> <#f8fafc>{reported}</#f8fafc>"
+    reason: "  <#fef08a>Grund:</#fef08a> <#f8fafc>{reason}</#f8fafc>"
+    server: "  <#fef08a>Server:</#fef08a> <#f8fafc>{server}</#f8fafc>"
+    status: "  <#fef08a>Status:</#fef08a> <#f8fafc>{status}</#f8fafc>"
+    created: "  <#fef08a>Erstellt:</#fef08a> <#f8fafc>{created}</#f8fafc>"
+    closed: "  <#fef08a>Geschlossen:</#fef08a> <#f8fafc>{closed}</#f8fafc>"
+    closed_by: "  <#fef08a>Geschlossen von:</#fef08a> <#f8fafc>{closed_by}</#f8fafc>"
+    close_reason: "  <#fef08a>Grund:</#fef08a> <#f8fafc>{close_reason}</#f8fafc>"
+  
+  view:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reports view <Spieler></#f8fafc>"
+    no_reports: "{PREFIX} <#bbf7d0>Keine Reports gegen {player}!</#bbf7d0>"
+    header: "{PREFIX} <#fef08a>Reports gegen {player}:</#fef08a>"
+    count: "{PREFIX} <#fef08a>Insgesamt:</#fef08a> <#f8fafc>{count}</#f8fafc> Reports"
+    item_open: "  <#f8fafc>[{id}]</#f8fafc> <#cbd5e1>|</#cbd5e1> <#fef08a>{reporter}</#fef08a> <#cbd5e1>-</#cbd5e1> <#fdba74>{reason}</#fdba74> <#cbd5e1>|</#cbd5e1> <#93c5fd>{date}</#93c5fd> <#cbd5e1>|</#cbd5e1> <#fca5a5>OFFEN"
+    item_closed: "  <#f8fafc>[{id}]</#f8fafc> <#cbd5e1>|</#cbd5e1> <#fef08a>{reporter}</#fef08a> <#cbd5e1>-</#cbd5e1> <#fdba74>{reason}</#fdba74> <#cbd5e1>|</#cbd5e1> <#93c5fd>{date}</#93c5fd> <#cbd5e1>|</#cbd5e1> <#bbf7d0>GESCHLOSSEN <#cbd5e1>von</#cbd5e1> <#fef08a>{closed_by}"
+    summary: "{PREFIX} <#cbd5e1>Offen:</#cbd5e1> <#fca5a5>{open}</#fca5a5> <#cbd5e1>| Geschlossen:</#cbd5e1> <#bbf7d0>{closed}</#bbf7d0>"
+  
+  help:
+    header: "{PREFIX} <#fef08a>═══ Report System Hilfe ═══</#fef08a>"
+    check: "  <#fef08a>/reports check</#fef08a> <#cbd5e1>-</#cbd5e1> <#f8fafc>Zeige alle offenen Reports</#f8fafc>"
+    info: "  <#fef08a>/reports info <ID></#fef08a> <#cbd5e1>-</#cbd5e1> <#f8fafc>Zeige Report-Details</#f8fafc>"
+    close: "  <#fef08a>/reports close <ID></#fef08a> <#cbd5e1>-</#cbd5e1> <#f8fafc>Schliesse einen Report</#f8fafc>"
+    view: "  <#fef08a>/reports view <Spieler></#fef08a> <#cbd5e1>-</#cbd5e1> <#f8fafc>Zeige alle Reports gegen Spieler</#f8fafc>"
+    admin_header: "{PREFIX} <#fca5a5>═══ Admin Commands ═══</#fca5a5>"
+    reload: "  <#fca5a5>/reportreload</#fca5a5> <#cbd5e1>-</#cbd5e1> <#f8fafc>Lade Config neu</#f8fafc>"
+    message: "  <#fca5a5>/reportmessage</#fca5a5> <#cbd5e1>-</#cbd5e1> <#f8fafc>Bearbeite Messages</#f8fafc>"
+
+discord:
+  webhook_invalid: "{PREFIX} <#fca5a5>Discord Webhook ungueltig!</#fca5a5>"
+  sending: "{PREFIX} <#93c5fd>Sende Report zu Discord...</#93c5fd>"
+
+permission:
+  no_permission: "{PREFIX} <#fca5a5>Du hast keine Berechtigung fuer diesen Befehl!</#fca5a5>"
+
+error:
+  unknown: "{PREFIX} <#fca5a5>Ein unbekannter Fehler ist aufgetreten!</#fca5a5>"
+
+# Admin/Staff Notifications
+admin:
+  report_created: "{PREFIX} <#fef08a>Neuer Report:</#fef08a> <#f8fafc>{reporter}</#f8fafc> meldet <#f8fafc>{reported}</#f8fafc> wegen <#fca5a5>{reason}</#fca5a5>"
+
+command:
+  no_permission: "{PREFIX} <#fca5a5>Du darfst diesen Befehl nicht nutzen!</#fca5a5>"
+  no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>{usage}</#f8fafc>"
+  invalid_id: "{PREFIX} <#fca5a5>Report ID ungueltig: {id}</#fca5a5>"
+
+message:
+  usage: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reportmessage set <key> <value> | /reportmessage get <key> | /reportmessage reload</#f8fafc>"
+  set:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reportmessage set <key> <value></#f8fafc>"
+    success: "{PREFIX} <#bbf7d0>Message aktualisiert!</#bbf7d0> <#cbd5e1>Key:</#cbd5e1> <#f8fafc>{key}</#f8fafc>"
+    error: "{PREFIX} <#fca5a5>Fehler:</#fca5a5> <#f8fafc>{error}</#f8fafc>"
+  get:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reportmessage get <key></#f8fafc>"
+    not_found: "{PREFIX} <#fca5a5>Message nicht gefunden: {key}</#fca5a5>"
+    success: "{PREFIX} <#fef08a>Key:</#fef08a> <#f8fafc>{key}</#f8fafc> <#cbd5e1>=</#cbd5e1> <#f8fafc>{value}</#f8fafc>"
+  reload:
+    success: "{PREFIX} <#bbf7d0>Messages neu geladen!</#bbf7d0>"
+    error: "{PREFIX} <#fca5a5>Fehler beim Laden:</#fca5a5> <#f8fafc>{error}</#f8fafc>"
+
+# Erweiterte Reports Sektion
+reports_list:
+  check:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/reports check [Seite]</#f8fafc>"
+    list_header: "{PREFIX} <#fef08a>Offene Reports:</#fef08a>"
+    list_item: "<#f8fafc>[{id}]</#f8fafc> <#cbd5e1>|</#cbd5e1> <#fef08a>{reporter}</#fef08a> <#cbd5e1>-</#cbd5e1> <#fca5a5>{reported}</#fca5a5> <#cbd5e1>:</#cbd5e1> <#fdba74>{reason}</#fdba74> <#cbd5e1>| {date}</#cbd5e1>"
+    no_reports: "{PREFIX} <#bbf7d0>Keine offenen Reports!</#bbf7d0>"
+    pagination: "{PREFIX} <#cbd5e1>Seite {page}/{maxpage}</#cbd5e1>"
+    item_count: "{PREFIX} <#fef08a>Insgesamt:</#fef08a> <#f8fafc>{count}</#f8fafc> offene Reports"
+  
+  info_cmd:
+    no_args: "{PREFIX} <#fef08a>Nutzung:</#fef08a> <#f8fafc>/report info <ID></#f8fafc>"
+    header: "{PREFIX} <#fef08a>Report Informationen:</#fef08a>"
+    id: "  <#fef08a>ID:</#fef08a> <#f8fafc>{id}</#f8fafc>"
+    reporter: "  <#fef08a>Reporter:</#fef08a> <#f8fafc>{reporter}</#f8fafc>"
+    reported: "  <#fef08a>Spieler:</#fef08a> <#f8fafc>{reported}</#f8fafc>"
+    reason: "  <#fef08a>Grund:</#fef08a> <#f8fafc>{reason}</#f8fafc>"
+    server: "  <#fef08a>Server:</#fef08a> <#f8fafc>{server}</#f8fafc>"
+    status: "  <#fef08a>Status:</#fef08a> <#f8fafc>{status}</#f8fafc>"
+    created: "  <#fef08a>Erstellt:</#fef08a> <#f8fafc>{created}</#f8fafc>"
+    closed: "  <#fef08a>Geschlossen:</#fef08a> <#f8fafc>{closed}</#f8fafc>"
+    closed_by: "  <#fef08a>Geschlossen von:</#fef08a> <#f8fafc>{closed_by}</#f8fafc>"
+    close_reason: "  <#fef08a>Grund:</#fef08a> <#f8fafc>{close_reason}</#f8fafc>"

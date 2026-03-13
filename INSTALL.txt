@@ -1,0 +1,229 @@
+ABYSSBAY REPORT SYSTEM - INSTALLATION & SETUP
+=============================================
+
+SCHRITT 1: VORAUSSETZUNGEN
+==========================
+
+Installiere folgende Plugins auf deinem Server:
+1. Bukkit/Spigel 1.20+ (Main Server Software)
+2. FloodgateAPI (für Bedrock-Support)
+
+Download Links:
+- Bukkit/Spigel: https://www.spigotmc.org
+- FloodgateAPI: https://github.com/GeyserMC/Floodgate/releases
+
+SCHRITT 2: PLUGIN KOMPILIEREN
+==============================
+
+Option A: Mit Maven
+  1. Maven installieren (https://maven.apache.org)
+  2. Terminal/CMD öffnen
+  3. Zum Plugin-Verzeichnis navigieren
+  4. Befehl ausführen: mvn clean package
+  5. JAR wird in target/ gespeichert
+
+Option B: Vorkompilierte JAR
+  Der Report-System.jar liegt bereits vom Maven-Build vor
+
+SCHRITT 3: JAR INSTALLIEREN
+===========================
+
+1. Starte den Server (falls noch nicht geschehen)
+2. Server herunterfahren (/stop oder Konsole)
+3. Kopiere die JAR-Datei:
+   → Von: [Kompilierte JAR]
+   → Nach: plugins/ Verzeichnis
+
+4. Starte Server neu:
+   Windows: start.bat
+   Linux/Mac: ./start.sh
+
+SCHRITT 4: DISCORD WEBHOOK ERSTELLEN
+====================================
+
+1. Öffne deinen Discord-Server
+2. Wähle einen Kanal für Reports (z.B. #reports oder #admin)
+3. Kanal-Einstellungen → Integrationen
+4. "Webhooks" Sektion
+5. "Create Webhook" Klicken
+6. Name: "Report System"
+7. "Copy Webhook URL"
+8. URL speichern (sieht so aus):
+   https://discord.com/api/webhooks/DEINE_ID/DEIN_TOKEN
+
+⚠️ WICHTIG: Gib diese URL niemandem!
+
+SCHRITT 5: ADMIN-ROLE ID FINDEN
+===============================
+
+1. Discord Developer Mode aktivieren:
+   User Settings → Advanced → Developer Mode
+   
+2. Rechtsklick auf deine Admin-Role
+3. "Copy Role ID" klicken
+4. ID speichern
+
+SCHRITT 6: KONFIGURATION ANPASSEN
+=================================
+
+Bearbeite die Datei: plugins/MinetalesReportSystem/config.yml
+
+Ändere folgende Werte:
+
+discord:
+  webhook-url: "DEINE_WEBHOOK_URL_HIER"
+  admin-role-id: "DEINE_ROLLE_ID_HIER"
+
+server:
+  name: "Dein Server Name"
+  bedrock-tracking: true (oder false)
+
+Speichern und schließen!
+
+SCHRITT 7: PLUGIN LADEN
+======================
+
+Option A: Server neu starten
+  - Server komplett herunterfahren
+  - Server neu starten
+  - Plugin wird automatisch geladen
+
+Option B: Plugin neu laden (schneller)
+  - Type in Konsole: reload confirm
+  - Plugin wird neu geladen (Spieler bleiben online)
+
+SCHRITT 8: BERECHTIGUNGEN EINRICHTEN
+===================================
+
+Nutzer haben bereits Berechtigungen, aber zu Sicherheit:
+
+Mit LuckPerms:
+  /luckperms group default permission set report.use true
+  /luckperms group admin permission set report.admin true
+
+Oder manuell in permissions.yml:
+  default:
+    permissions:
+      report.use: true
+  
+  admin:
+    permissions:
+      report.admin: true
+
+SCHRITT 9: TESTE DAS PLUGIN
+===========================
+
+Öffne die Spieler-Konsole oder Chat:
+
+Test 1: /report TestPlayer Hacking
+- Sollte Erfolgsmeldung erscheinen
+- Discord sollte Nachricht erhalten
+
+Test 2: /reportstats
+- Sollte Report-Statistiken zeigen
+
+Test 3: /reportinfo REP-1-XXXX
+- Sollte Report-Details zeigen
+
+Test 4: /reportdash
+- Sollte Dashboard mit offenen Reports zeigen
+
+SCHRITT 10: SPIELER INFORMIEREN
+==============================
+
+Teile mit deinen Spielern mit:
+- /report <Spieler> <Grund>
+- Oder /melden <Spieler> <Grund> (Alias)
+
+Verfügbare Gründe zeigen mit:
+- /report (ohne Argumente)
+
+FERTIG! 🎉
+==========
+
+Das Plugin ist jetzt einsatzbereit!
+
+HÄUFIGE FEHLER:
+===============
+
+[ERROR] "Discord Webhook ungültig"
+→ Webhook-URL korrekt kopiert?
+→ Punkt am Ende der URL entfernen?
+→ Discord-Kanal gelöscht?
+→ Neue Webhook erstellen
+
+[ERROR] "FloodgateAPI nicht gefunden"
+→ FloodgateAPI Plugin nicht installiert
+→ Oder im falschen Verzeichnis
+→ Server neu starten nach Installation
+
+[ERROR] "Report wird nicht erstellt"
+→ Berechtigungen überprüfen: /perm check @s report.use
+→ Spieler-Name korrekt geschrieben?
+→ Grund gültig? (/report zeigt Liste)
+
+[ERROR] "Build fehlgeschlagen"
+→ Java 16+ installiert? (java -version)
+→ Maven installiert? (mvn -version)
+→ Logs überprüfen
+
+OPTIONAL: WEITERE KONFIGURATION
+===============================
+
+custom-gründe.txt:
+report:
+  reasons:
+    - "Hacking"
+    - "XRay"
+    - "Griefing"
+    - "Spamming"
+    - "Beleidigung"
+    - "Bedrohung"
+    - "Cheating"
+    - "Scamming"
+
+cooldown ändern (in config.yml):
+report:
+  cooldown-seconds: 60        # Standard
+
+embed-farbe ändern:
+discord:
+  embed-color: 3092790        # Türkis
+  # Andere Farben:
+  # Rot: 16711680
+  # Grün: 65280
+  # Blau: 255
+
+SUPPORT & HILFE:
+================
+
+Logs überprüfen:
+- Windows: logs\latest.log
+- Linux: logs/latest.log
+- Suche nach [Report] oder [Error]
+
+Plugin-Info:
+- /plugins (sollte MinetalesReportSystem zeigen)
+
+Bei Problemen:
+1. Logs überprüfen
+2. Config überprüfen
+3. Berechtigungen überprüfen
+4. Server neu starten
+
+NÄCHSTE SCHRITTE:
+================
+
+Nachdem alles funktioniert:
+
+1. Reports monitoren (/reportdash)
+2. Spieler schulen (Report-Info)
+3. Discord Channel organisieren
+4. Custom-Features hinzufügen (optional)
+5. Regelmäßig Backup machen
+
+VIEL ERFOLG! 🚀
+
+Version 1.0.0
+Erstellt: März 2026
+AbyssBay Team
