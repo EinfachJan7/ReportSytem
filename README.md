@@ -88,12 +88,4 @@ Das System ist nach dem **Model-View-Controller (MVC)** Prinzip aufgebaut:
 
 ---
 
-## 🌟 Roadmap
-
-* [ ] **Web-Interface:** Ein externes Dashboard für Browser-Zugriff.
-* [ ] **Auto-Mod:** Automatische Sanktionen bei Erreichen eines Report-Schwellenwerts.
-* [ ] **Reward-System:** Belohnungen für Spieler, deren Reports zur Überführung führten.
-
----
-
 **Version:** `1.0.0-RELEASE` | **Entwickelt von:** `AbyssBay Team` 🚀
