@@ -4,11 +4,11 @@
 database:
   enabled: true
   type: "mysql"  # mysql oder file
-  host: "138.201.17.99"
+  host: "localhost"
   port: 3306
-  name: "Datenbank"
-  user: "Zockerlord15"
-  password: "Minecraft1234"
+  name: "database"
+  user: "root"
+  password: "Admin"
   # Connection Pool Einstellungen
   max-pool-size: 10
   min-idle: 5
