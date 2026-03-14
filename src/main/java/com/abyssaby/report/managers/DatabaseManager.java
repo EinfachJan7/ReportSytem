@@ -1,7 +1,7 @@
-package com.minetales.report.managers;
+package com.abyssaby.report.managers;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -13,11 +13,11 @@ import java.util.*;
  */
 public class DatabaseManager {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private HikariDataSource dataSource;
     private boolean dbEnabled;
 
-    public DatabaseManager(MinetalesReportPlugin plugin) {
+    public DatabaseManager(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
         this.dbEnabled = false;
     }

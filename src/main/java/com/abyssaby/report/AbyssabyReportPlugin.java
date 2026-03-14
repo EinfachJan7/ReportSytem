@@ -1,29 +1,29 @@
-package com.minetales.report;
+package com.abyssaby.report;
 
-import com.minetales.report.commands.ReportCommand;
-import com.minetales.report.commands.ReloadCommand;
-import com.minetales.report.commands.ReportCommandTabCompleter;
-import com.minetales.report.commands.ReportsCommand;
-import com.minetales.report.commands.ReportsCommandTabCompleter;
-import com.minetales.report.commands.MessageCommand;
-import com.minetales.report.gui.ReportReasonGUI;
-import com.minetales.report.listeners.PlayerJoinListener;
-import com.minetales.report.listeners.PlayerQuitListener;
-import com.minetales.report.listeners.ReportPromptListener;
-import com.minetales.report.managers.ReportManager;
-import com.minetales.report.managers.DatabaseManager;
-import com.minetales.report.managers.DiscordManager;
-import com.minetales.report.utils.ConfigManager;
-import com.minetales.report.utils.MessageManager;
+import com.abyssaby.report.commands.ReportCommand;
+import com.abyssaby.report.commands.ReloadCommand;
+import com.abyssaby.report.commands.ReportCommandTabCompleter;
+import com.abyssaby.report.commands.ReportsCommand;
+import com.abyssaby.report.commands.ReportsCommandTabCompleter;
+import com.abyssaby.report.commands.MessageCommand;
+import com.abyssaby.report.gui.ReportReasonGUI;
+import com.abyssaby.report.listeners.PlayerJoinListener;
+import com.abyssaby.report.listeners.PlayerQuitListener;
+import com.abyssaby.report.listeners.ReportPromptListener;
+import com.abyssaby.report.managers.ReportManager;
+import com.abyssaby.report.managers.DatabaseManager;
+import com.abyssaby.report.managers.DiscordManager;
+import com.abyssaby.report.utils.ConfigManager;
+import com.abyssaby.report.utils.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.geysermc.floodgate.api.FloodgateApi;
 
 import java.util.TimeZone;
 
-public class MinetalesReportPlugin extends JavaPlugin {
+public class AbyssabyReportPlugin extends JavaPlugin {
     
-    private static MinetalesReportPlugin instance;
+    private static AbyssabyReportPlugin instance;
     private ReportManager reportManager;
     private DatabaseManager databaseManager;
     private DiscordManager discordManager;
@@ -113,7 +113,7 @@ public class MinetalesReportPlugin extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(this), this);
     }
 
-    public static MinetalesReportPlugin getInstance() {
+    public static AbyssabyReportPlugin getInstance() {
         return instance;
     }
 

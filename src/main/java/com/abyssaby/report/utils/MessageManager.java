@@ -1,6 +1,6 @@
-package com.minetales.report.utils;
+package com.abyssaby.report.utils;
 
-import com.minetales.report.MinetalesReportPlugin;
+import com.abyssaby.report.AbyssabyReportPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,12 +16,12 @@ import java.util.Map;
  */
 public class MessageManager {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
     private YamlConfiguration messages;
     private File messagesFile;
 
-    public MessageManager(MinetalesReportPlugin plugin) {
+    public MessageManager(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
         loadMessages();
     }

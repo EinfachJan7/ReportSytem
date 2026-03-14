@@ -1,6 +1,6 @@
-package com.minetales.report.commands;
+package com.abyssaby.report.commands;
 
-import com.minetales.report.MinetalesReportPlugin;
+import com.abyssaby.report.AbyssabyReportPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -12,9 +12,9 @@ import java.util.List;
 
 public class ReportsCommandTabCompleter implements TabCompleter {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     
-    public ReportsCommandTabCompleter(MinetalesReportPlugin plugin) {
+    public ReportsCommandTabCompleter(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -59,10 +59,10 @@ public class ReportsCommandTabCompleter implements TabCompleter {
                     }
                 }
             } else if (subcommand.equals("info") || subcommand.equals("close")) {
-                List<com.minetales.report.models.Report> reports = plugin.getReportManager().getAllReports();
+                List<com.abyssaby.report.models.Report> reports = plugin.getReportManager().getAllReports();
                 String reportIdPrefix = args[1].toLowerCase();
                 
-                for (com.minetales.report.models.Report report : reports) {
+                for (com.abyssaby.report.models.Report report : reports) {
                     if (report.getReportId().toLowerCase().startsWith(reportIdPrefix)) {
                         completions.add(report.getReportId());
                     }

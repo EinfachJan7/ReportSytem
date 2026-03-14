@@ -1,6 +1,6 @@
-package com.minetales.report.commands;
+package com.abyssaby.report.commands;
 
-import com.minetales.report.MinetalesReportPlugin;
+import com.abyssaby.report.AbyssabyReportPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -12,9 +12,9 @@ import java.util.List;
 
 public class ReportCommandTabCompleter implements TabCompleter {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     
-    public ReportCommandTabCompleter(MinetalesReportPlugin plugin) {
+    public ReportCommandTabCompleter(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
     }
 

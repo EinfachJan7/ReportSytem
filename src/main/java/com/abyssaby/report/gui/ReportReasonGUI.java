@@ -1,7 +1,7 @@
-package com.minetales.report.gui;
+package com.abyssaby.report.gui;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.utils.MessageManager;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.utils.MessageManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class ReportReasonGUI implements Listener {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final MessageManager messageManager;
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
     private final LegacyComponentSerializer legacySerializer = LegacyComponentSerializer.legacySection();
@@ -33,7 +33,7 @@ public class ReportReasonGUI implements Listener {
     private Material backgroundMaterial;
     private String backgroundName;
     
-    public ReportReasonGUI(MinetalesReportPlugin plugin, MessageManager messageManager) {
+    public ReportReasonGUI(AbyssabyReportPlugin plugin, MessageManager messageManager) {
         this.plugin = plugin;
         this.messageManager = messageManager;
         loadGuiConfig();

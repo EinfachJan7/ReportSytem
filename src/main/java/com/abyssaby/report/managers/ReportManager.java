@@ -1,7 +1,7 @@
-package com.minetales.report.managers;
+package com.abyssaby.report.managers;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
 import org.bukkit.entity.Player;
 
 import java.sql.SQLException;
@@ -13,10 +13,10 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ReportManager {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final Map<String, Long> cooldowns = new ConcurrentHashMap<>();
 
-    public ReportManager(MinetalesReportPlugin plugin) {
+    public ReportManager(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
     }
 

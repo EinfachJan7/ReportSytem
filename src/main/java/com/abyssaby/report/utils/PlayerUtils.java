@@ -1,14 +1,14 @@
-package com.minetales.report.utils;
+package com.abyssaby.report.utils;
 
-import com.minetales.report.MinetalesReportPlugin;
+import com.abyssaby.report.AbyssabyReportPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class PlayerUtils {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
 
-    public PlayerUtils(MinetalesReportPlugin plugin) {
+    public PlayerUtils(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
     }
 

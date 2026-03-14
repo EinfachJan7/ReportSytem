@@ -1,6 +1,6 @@
-package com.minetales.report.listeners;
+package com.abyssaby.report.listeners;
 
-import com.minetales.report.MinetalesReportPlugin;
+import com.abyssaby.report.AbyssabyReportPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,9 +8,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerQuitListener implements Listener {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
 
-    public PlayerQuitListener(MinetalesReportPlugin plugin) {
+    public PlayerQuitListener(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
     }
 

@@ -1,8 +1,8 @@
-package com.minetales.report.commands;
+package com.abyssaby.report.commands;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
-import com.minetales.report.utils.MessageManager;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
+import com.abyssaby.report.utils.MessageManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 
 public class ReportCloseCommand implements CommandExecutor {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final MessageManager messageManager;
 
-    public ReportCloseCommand(MinetalesReportPlugin plugin) {
+    public ReportCloseCommand(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
         this.messageManager = plugin.getMessageManager();
     }

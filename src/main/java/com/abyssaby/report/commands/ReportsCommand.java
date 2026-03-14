@@ -1,8 +1,8 @@
-package com.minetales.report.commands;
+package com.abyssaby.report.commands;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
-import com.minetales.report.utils.MessageManager;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
+import com.abyssaby.report.utils.MessageManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,12 +13,12 @@ import java.util.List;
 
 public class ReportsCommand implements CommandExecutor {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final MessageManager messageManager;
     private static final int ITEMS_PER_PAGE = 5;
     private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
-    public ReportsCommand(MinetalesReportPlugin plugin) {
+    public ReportsCommand(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
         this.messageManager = plugin.getMessageManager();
     }

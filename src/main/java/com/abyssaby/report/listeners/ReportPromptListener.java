@@ -1,8 +1,8 @@
-package com.minetales.report.listeners;
+package com.abyssaby.report.listeners;
 
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
-import com.minetales.report.utils.MessageManager;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
+import com.abyssaby.report.utils.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,11 +18,11 @@ import java.util.UUID;
  */
 public class ReportPromptListener implements Listener {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final MessageManager messageManager;
     private final Map<UUID, String> waitingForReason = new HashMap<>();
     
-    public ReportPromptListener(MinetalesReportPlugin plugin, MessageManager messageManager) {
+    public ReportPromptListener(AbyssabyReportPlugin plugin, MessageManager messageManager) {
         this.plugin = plugin;
         this.messageManager = messageManager;
         Bukkit.getPluginManager().registerEvents(this, plugin);

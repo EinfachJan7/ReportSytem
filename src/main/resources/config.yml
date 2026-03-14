@@ -8,7 +8,7 @@ database:
   port: 3306
   name: "database"
   user: "root"
-  password: "Admin"
+  password: "[REDACTED]"
   # Connection Pool Einstellungen
   max-pool-size: 10
   min-idle: 5
@@ -18,8 +18,8 @@ database:
 
 # Discord Webhook
 discord:
-  webhook-url: "https://discord.com/api/webhooks/1481988110236782592/YkR36kNnM299RiVv2xvfUFO-ap3wR337TGWh6U1Cer1qQw5WoVaTuJB707OS4JkfJ3-Z"
-  admin-role-id: "1482018689053229219"
+  webhook-url: "https://discord.com/api/webhooks/[REDACTED]/[REDACTED]"
+  admin-role-id: "[REDACTED]"
   
   # Embed Customization
   embed:

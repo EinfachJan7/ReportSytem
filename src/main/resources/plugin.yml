@@ -1,7 +1,7 @@
 name: AbyssBayReportSystem
 version: 1.0.0
 api-version: 1.13
-main: com.minetales.report.MinetalesReportPlugin
+main: com.abyssaby.report.AbyssabyReportPlugin
 description: Professional Report System for AbyssBay
 authors:
   - AbyssBay Team

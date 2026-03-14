@@ -1,8 +1,8 @@
-package com.minetales.report.managers;
+package com.abyssaby.report.managers;
 
 import com.google.gson.JsonObject;
-import com.minetales.report.MinetalesReportPlugin;
-import com.minetales.report.models.Report;
+import com.abyssaby.report.AbyssabyReportPlugin;
+import com.abyssaby.report.models.Report;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -11,13 +11,13 @@ import java.time.Instant;
 
 public class DiscordManager {
     
-    private final MinetalesReportPlugin plugin;
+    private final AbyssabyReportPlugin plugin;
     private final String webhookUrl;
     private final String adminRoleId;
     private final int embedColor;
     private boolean webhookValid = false;
 
-    public DiscordManager(MinetalesReportPlugin plugin) {
+    public DiscordManager(AbyssabyReportPlugin plugin) {
         this.plugin = plugin;
         this.webhookUrl = plugin.getConfigManager().getWebhookUrl();
         this.adminRoleId = plugin.getConfigManager().getAdminRoleId();

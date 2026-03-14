@@ -1,4 +1,4 @@
-﻿# AbyssBay Report System - Nachrichten
+# AbyssBay Report System - Nachrichten
 # Nutze den {PREFIX} Placeholder um den Prefix aus der system-config zu verwenden
 # Alle anderen Platzhalter: {player}, {reporter}, {reason}, {id}, {seconds}, {error}
 

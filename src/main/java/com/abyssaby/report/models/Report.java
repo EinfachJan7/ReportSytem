@@ -1,4 +1,4 @@
-package com.minetales.report.models;
+package com.abyssaby.report.models;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

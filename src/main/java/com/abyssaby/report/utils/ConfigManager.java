@@ -1,4 +1,4 @@
-package com.minetales.report.utils;
+package com.abyssaby.report.utils;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -149,7 +149,7 @@ public class ConfigManager {
     }
 
     public String getOldDatabaseFile() {
-        return config.getString("database.file", "plugins/MinetalesReportSystem/database.db");
+        return config.getString("database.file", "plugins/AbyssabyReportSystem/database.db");
     }
 
     // Bedrock
