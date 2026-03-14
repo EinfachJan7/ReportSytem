@@ -80,12 +80,4 @@ Das System ist nach dem **Model-View-Controller (MVC)** Prinzip aufgebaut:
 
 ---
 
-## 🛠 Troubleshooting
-
-* **Keine Discord-Nachricht?** Prüfe die Webhook-URL und die Server-Firewall (Port 443).
-* **Bedrock-Spieler fehlen?** Stelle sicher, dass Floodgate korrekt installiert ist.
-* **Datenbank-Fehler?** Prüfe, ob Schreibrechte im Plugin-Ordner für die `.db` Datei bestehen.
-
----
-
 **Version:** `1.0.0-RELEASE` | **Entwickelt von:** `AbyssBay Team` 🚀
